@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "slamapp-b3e9"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "slamapp-b3e9"
+  template:
+    metadata:
+      labels:
+        app: "slamapp-b3e9"
+    spec:
+      containers:
+        - name: "slamapp-b3e9"
+          image: "nunu78.azurecr.io/slamapp"
+          ports:
+          - containerPort: 80
